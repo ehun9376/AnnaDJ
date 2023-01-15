@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		364FDB2A2970F166002E4FC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364FDB292970F166002E4FC2 /* AppDelegate.swift */; };
-		364FDB2C2970F166002E4FC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364FDB2B2970F166002E4FC2 /* SceneDelegate.swift */; };
 		364FDB312970F166002E4FC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 364FDB2F2970F166002E4FC2 /* Main.storyboard */; };
 		364FDB332970F168002E4FC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 364FDB322970F168002E4FC2 /* Assets.xcassets */; };
 		364FDB362970F168002E4FC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 364FDB342970F168002E4FC2 /* LaunchScreen.storyboard */; };
@@ -61,6 +60,9 @@
 		9462578F2974319500578137 /* revCR.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9462577E2974319500578137 /* revCR.mp3 */; };
 		946257902974319500578137 /* crash.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9462577F2974319500578137 /* crash.mp3 */; };
 		946257912974319500578137 /* tuneUp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 946257802974319500578137 /* tuneUp.mp3 */; };
+		9462579A297438E000578137 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94625799297438E000578137 /* StoreKit.framework */; };
+		9462579D29743D3600578137 /* BuyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9462579C29743D3600578137 /* BuyCell.swift */; };
+		9462579F29743DD900578137 /* BuyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9462579E29743DD900578137 /* BuyCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +85,6 @@
 /* Begin PBXFileReference section */
 		364FDB262970F166002E4FC2 /* AnnaDJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnnaDJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		364FDB292970F166002E4FC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		364FDB2B2970F166002E4FC2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		364FDB302970F166002E4FC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		364FDB322970F168002E4FC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		364FDB352970F168002E4FC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -139,6 +140,9 @@
 		9462577E2974319500578137 /* revCR.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = revCR.mp3; sourceTree = "<group>"; };
 		9462577F2974319500578137 /* crash.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crash.mp3; sourceTree = "<group>"; };
 		946257802974319500578137 /* tuneUp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tuneUp.mp3; sourceTree = "<group>"; };
+		94625799297438E000578137 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		9462579C29743D3600578137 /* BuyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCell.swift; sourceTree = "<group>"; };
+		9462579E29743DD900578137 /* BuyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9462579A297438E000578137 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +178,7 @@
 				364FDB3F2970F168002E4FC2 /* AnnaDJTests */,
 				364FDB492970F168002E4FC2 /* AnnaDJUITests */,
 				364FDB272970F166002E4FC2 /* Products */,
+				94625798297438E000578137 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,10 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				364FDB292970F166002E4FC2 /* AppDelegate.swift */,
-				364FDB2B2970F166002E4FC2 /* SceneDelegate.swift */,
-				364FDB5B2970FBAA002E4FC2 /* GridViewController.swift */,
 				364FDB5D2970FBAB002E4FC2 /* LaunchviewController.swift */,
-				364FDB5C2970FBAB002E4FC2 /* SelectViewController.swift */,
+				9462579B2974391B00578137 /* pages */,
 				364FDB8329712A83002E4FC2 /* CustomView */,
 				364FDB8229712A6D002E4FC2 /* Helper */,
 				364FDB8029712A49002E4FC2 /* Cell */,
@@ -237,6 +241,8 @@
 		364FDB8029712A49002E4FC2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				9462579C29743D3600578137 /* BuyCell.swift */,
+				9462579E29743DD900578137 /* BuyCell.xib */,
 				364FDB6E2970FBC5002E4FC2 /* SettingCell.swift */,
 				364FDB6D2970FBC5002E4FC2 /* SettingCell.xib */,
 				364FDB9829713019002E4FC2 /* ImageCell.swift */,
@@ -308,6 +314,23 @@
 				364FDB8529712D37002E4FC2 /* woodFish.mp3 */,
 			);
 			path = Music;
+			sourceTree = "<group>";
+		};
+		94625798297438E000578137 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94625799297438E000578137 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9462579B2974391B00578137 /* pages */ = {
+			isa = PBXGroup;
+			children = (
+				364FDB5B2970FBAA002E4FC2 /* GridViewController.swift */,
+				364FDB5C2970FBAB002E4FC2 /* SelectViewController.swift */,
+			);
+			path = pages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,6 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				946257882974319500578137 /* open.mp3 in Resources */,
+				9462579F29743DD900578137 /* BuyCell.xib in Resources */,
 				946257912974319500578137 /* tuneUp.mp3 in Resources */,
 				9462578E2974319500578137 /* loops.mp3 in Resources */,
 				364FDB362970F168002E4FC2 /* LaunchScreen.storyboard in Resources */,
@@ -487,8 +511,8 @@
 				364FDB672970FBB8002E4FC2 /* IAPCenter.swift in Sources */,
 				364FDB782970FBCC002E4FC2 /* BaseViewController.swift in Sources */,
 				364FDB622970FBB2002E4FC2 /* CodeModel.swift in Sources */,
-				364FDB2C2970F166002E4FC2 /* SceneDelegate.swift in Sources */,
 				364FDB7C2970FBCC002E4FC2 /* CellProtocol.swift in Sources */,
+				9462579D29743D3600578137 /* BuyCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,7 +618,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -648,7 +672,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -665,7 +689,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NZT54R9366;
+				DEVELOPMENT_TEAM = 89P6MA394F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnnaDJ/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -673,13 +697,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tw.com.annaBegg.DJ.AnnaDJ;
+				PRODUCT_BUNDLE_IDENTIFIER = tw.com.annaBegg.annaDJ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -697,7 +721,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NZT54R9366;
+				DEVELOPMENT_TEAM = 89P6MA394F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnnaDJ/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -705,13 +729,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tw.com.annaBegg.DJ.AnnaDJ;
+				PRODUCT_BUNDLE_IDENTIFIER = tw.com.annaBegg.annaDJ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

@@ -37,19 +37,51 @@ enum ProductID {
     ///三角鐵
     case traingle
     
+    case how
+    
+    case oh
+    
+    case airhorn
+    
+    case gminor
+    
+    case revCR
+    
+    case loops
+    
+    case fillin
+    
+    case tuneUp
+    
+    case acid
+    
+    case bass
+    
+    case crash
+    
+    case open
+    
+    case rootBPM
+    
+    case synths
+    
+    case kicks
+    
+    case snares
+    
     var id: String  {
         switch self {
             //木魚
-        case .woodFish: return  "com.activision.callofduty.shooter.topup_50_a"
+        case .woodFish: return  "a"
             
             //鼓
-        case .drum: return "com.activision.callofduty.shooter.tier_50"
+        case .drum: return "b"
             
             //金剛鈴
-        case .ring: return"com.activision.callofduty.shooter.topup_100_a"
+        case .ring: return "c"
             
             //引馨
-        case .inSin: return "com.activision.callofduty.shooter.tier_100"
+        case .inSin: return "d"
             
             //銅鑼
         case .gong: return "e"
@@ -62,6 +94,38 @@ enum ProductID {
             
         case .traingle: return "i"
 
+        case .how:
+            return "j"
+        case .oh:
+            return "n"
+        case .airhorn:
+            return "n"
+        case .gminor:
+            return "n"
+        case .revCR:
+            return "n"
+        case .loops:
+            return "n"
+        case .fillin:
+            return "n"
+        case .tuneUp:
+            return "n"
+        case .acid:
+            return "n"
+        case .bass:
+            return "n"
+        case .crash:
+            return "n"
+        case .open:
+            return "n"
+        case .rootBPM:
+            return "n"
+        case .synths:
+            return "n"
+        case .kicks:
+            return "n"
+        case .snares:
+            return "n"
         }
     }
     
@@ -86,6 +150,38 @@ enum ProductID {
         case .traingle:
             return "三角鐵"
             
+        case .how:
+            return ""
+        case .oh:
+            return ""
+        case .airhorn:
+            return ""
+        case .gminor:
+            return ""
+        case .revCR:
+            return ""
+        case .loops:
+            return ""
+        case .fillin:
+            return ""
+        case .tuneUp:
+            return ""
+        case .acid:
+            return ""
+        case .bass:
+            return ""
+        case .crash:
+            return ""
+        case .open:
+            return ""
+        case .rootBPM:
+            return ""
+        case .synths:
+            return ""
+        case .kicks:
+            return ""
+        case .snares:
+            return ""
         }
     }
     
@@ -109,6 +205,38 @@ enum ProductID {
             return "dotRing"
         case .traingle:
             return "traingle"
+        case .how:
+            return "how"
+        case .oh:
+            return "oh"
+        case .airhorn:
+            return "airhorn"
+        case .gminor:
+            return "gminor"
+        case .revCR:
+            return "revCR"
+        case .loops:
+            return "loops"
+        case .fillin:
+            return "fillin"
+        case .tuneUp:
+            return "tuneUp"
+        case .acid:
+            return "acid"
+        case .bass:
+            return "bass"
+        case .crash:
+            return "crash"
+        case .open:
+            return "open"
+        case .rootBPM:
+            return "rootBPM"
+        case .synths:
+            return "synths"
+        case .kicks:
+            return "kicks"
+        case .snares:
+            return "snares"
         }
     }
     
@@ -126,12 +254,14 @@ class IAPCenter: NSObject {
     
     var storeComplete: (()->())?
     
-    let types: [ProductID] = [.woodFish,.gong,.inSin,.ring,.drum,.board,.clock,.dotRing,.traingle]
+    let baseTypes: [ProductID] = [.how,.oh,.clock,.airhorn,.gminor,.revCR,.drum,.board,.dotRing,.traingle]
+    
+    let buyTypes: [ProductID] = [.woodFish,.gong,.ring,.loops,.fillin,.tuneUp,.acid,.bass,.crash,.open,.rootBPM,.synths,.inSin,.kicks,.snares]
     
     
     //總共有多少購買項目
     func getProductIDs() -> [String] {
-        return types.map { $0.id }
+        return buyTypes.map { $0.id }
     }
     
     func getProducts() {

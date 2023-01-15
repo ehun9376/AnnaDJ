@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8hZ-4l-8ef" customClass="ImageCell" customModule="BlackSreenVideo" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8hZ-4l-8ef" customClass="ImageCell" customModule="AnnaDJ" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="238" height="207"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="STm-VY-c1d">
@@ -18,21 +18,33 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="02w-X2-kQd">
-                        <rect key="frame" x="0.0" y="0.0" width="207" height="207"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="02w-X2-kQd" secondAttribute="height" multiplier="1:1" id="baq-fF-6Cw"/>
-                        </constraints>
+                        <rect key="frame" x="0.0" y="0.0" width="238" height="207"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muK-pt-4F2">
+                        <rect key="frame" x="10" y="10" width="218" height="187"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="02w-X2-kQd" firstAttribute="top" secondItem="STm-VY-c1d" secondAttribute="top" id="N4F-Ku-Uny"/>
-                    <constraint firstAttribute="bottom" secondItem="02w-X2-kQd" secondAttribute="bottom" id="NgN-uc-XoA"/>
-                    <constraint firstItem="02w-X2-kQd" firstAttribute="leading" secondItem="STm-VY-c1d" secondAttribute="leading" id="yxR-W9-SNK"/>
+                    <constraint firstItem="muK-pt-4F2" firstAttribute="top" secondItem="STm-VY-c1d" secondAttribute="top" constant="10" id="BIN-Y4-Weq"/>
+                    <constraint firstItem="02w-X2-kQd" firstAttribute="top" secondItem="STm-VY-c1d" secondAttribute="top" id="BZQ-QB-nvl"/>
+                    <constraint firstAttribute="trailing" secondItem="muK-pt-4F2" secondAttribute="trailing" constant="10" id="axP-cd-4Ed"/>
+                    <constraint firstItem="muK-pt-4F2" firstAttribute="centerX" secondItem="STm-VY-c1d" secondAttribute="centerX" id="dyH-oZ-T0b"/>
+                    <constraint firstAttribute="bottom" secondItem="muK-pt-4F2" secondAttribute="bottom" constant="10" id="gub-Sp-WCO"/>
+                    <constraint firstItem="muK-pt-4F2" firstAttribute="leading" secondItem="STm-VY-c1d" secondAttribute="leading" constant="10" id="mrb-fW-NMH"/>
+                    <constraint firstAttribute="trailing" secondItem="02w-X2-kQd" secondAttribute="trailing" id="plA-fC-pfJ"/>
+                    <constraint firstAttribute="bottom" secondItem="02w-X2-kQd" secondAttribute="bottom" id="s0x-x7-7uY"/>
+                    <constraint firstItem="02w-X2-kQd" firstAttribute="leading" secondItem="STm-VY-c1d" secondAttribute="leading" id="tQq-S7-p9Z"/>
+                    <constraint firstItem="muK-pt-4F2" firstAttribute="centerX" secondItem="STm-VY-c1d" secondAttribute="centerX" id="uRK-9t-Fjq"/>
+                    <constraint firstItem="muK-pt-4F2" firstAttribute="centerY" secondItem="STm-VY-c1d" secondAttribute="centerY" id="utu-Kl-1Wi"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="238" height="207"/>
             <connections>
                 <outlet property="backImageView" destination="02w-X2-kQd" id="xCM-Rp-sdj"/>
+                <outlet property="label" destination="muK-pt-4F2" id="vKc-oi-Txz"/>
             </connections>
             <point key="canvasLocation" x="175.38461538461539" y="44.431279620853076"/>
         </collectionViewCell>
