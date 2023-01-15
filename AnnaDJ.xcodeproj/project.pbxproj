@@ -45,6 +45,22 @@
 		364FDB9529712D37002E4FC2 /* dotRing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 364FDB8C29712D37002E4FC2 /* dotRing.mp3 */; };
 		364FDB9929713019002E4FC2 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 364FDB9729713019002E4FC2 /* ImageCell.xib */; };
 		364FDB9A29713019002E4FC2 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364FDB9829713019002E4FC2 /* ImageCell.swift */; };
+		946257812974319500578137 /* oh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 946257702974319400578137 /* oh.mp3 */; };
+		946257822974319500578137 /* acid.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 946257712974319400578137 /* acid.mp3 */; };
+		946257832974319500578137 /* airhorn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 946257722974319400578137 /* airhorn.mp3 */; };
+		946257852974319500578137 /* snares.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 946257742974319400578137 /* snares.mp3 */; };
+		946257862974319500578137 /* rootBPM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 946257752974319500578137 /* rootBPM.mp3 */; };
+		946257872974319500578137 /* fillin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 946257762974319500578137 /* fillin.mp3 */; };
+		946257882974319500578137 /* open.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 946257772974319500578137 /* open.mp3 */; };
+		946257892974319500578137 /* gminor.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 946257782974319500578137 /* gminor.mp3 */; };
+		9462578A2974319500578137 /* bass.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 946257792974319500578137 /* bass.mp3 */; };
+		9462578B2974319500578137 /* kicks.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9462577A2974319500578137 /* kicks.mp3 */; };
+		9462578C2974319500578137 /* how.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9462577B2974319500578137 /* how.mp3 */; };
+		9462578D2974319500578137 /* synths.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9462577C2974319500578137 /* synths.mp3 */; };
+		9462578E2974319500578137 /* loops.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9462577D2974319500578137 /* loops.mp3 */; };
+		9462578F2974319500578137 /* revCR.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9462577E2974319500578137 /* revCR.mp3 */; };
+		946257902974319500578137 /* crash.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9462577F2974319500578137 /* crash.mp3 */; };
+		946257912974319500578137 /* tuneUp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 946257802974319500578137 /* tuneUp.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +123,22 @@
 		364FDB8C29712D37002E4FC2 /* dotRing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dotRing.mp3; sourceTree = "<group>"; };
 		364FDB9729713019002E4FC2 /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		364FDB9829713019002E4FC2 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		946257702974319400578137 /* oh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = oh.mp3; sourceTree = "<group>"; };
+		946257712974319400578137 /* acid.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = acid.mp3; sourceTree = "<group>"; };
+		946257722974319400578137 /* airhorn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = airhorn.mp3; sourceTree = "<group>"; };
+		946257742974319400578137 /* snares.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = snares.mp3; sourceTree = "<group>"; };
+		946257752974319500578137 /* rootBPM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rootBPM.mp3; sourceTree = "<group>"; };
+		946257762974319500578137 /* fillin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fillin.mp3; sourceTree = "<group>"; };
+		946257772974319500578137 /* open.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = open.mp3; sourceTree = "<group>"; };
+		946257782974319500578137 /* gminor.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gminor.mp3; sourceTree = "<group>"; };
+		946257792974319500578137 /* bass.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bass.mp3; sourceTree = "<group>"; };
+		9462577A2974319500578137 /* kicks.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kicks.mp3; sourceTree = "<group>"; };
+		9462577B2974319500578137 /* how.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = how.mp3; sourceTree = "<group>"; };
+		9462577C2974319500578137 /* synths.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = synths.mp3; sourceTree = "<group>"; };
+		9462577D2974319500578137 /* loops.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = loops.mp3; sourceTree = "<group>"; };
+		9462577E2974319500578137 /* revCR.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = revCR.mp3; sourceTree = "<group>"; };
+		9462577F2974319500578137 /* crash.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crash.mp3; sourceTree = "<group>"; };
+		946257802974319500578137 /* tuneUp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tuneUp.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +199,7 @@
 				364FDB8029712A49002E4FC2 /* Cell */,
 				364FDB7F29712A42002E4FC2 /* Model */,
 				364FDB8129712A55002E4FC2 /* Base */,
+				364FDB9629712D49002E4FC2 /* Music */,
 				364FDB2F2970F166002E4FC2 /* Main.storyboard */,
 				364FDB322970F168002E4FC2 /* Assets.xcassets */,
 				364FDB342970F168002E4FC2 /* LaunchScreen.storyboard */,
@@ -221,7 +254,6 @@
 				364FDB722970FBCB002E4FC2 /* BaseViewController.swift */,
 				364FDB732970FBCC002E4FC2 /* CollectionViewAdapter.swift */,
 				364FDB762970FBCC002E4FC2 /* CellProtocol.swift */,
-				364FDB9629712D49002E4FC2 /* Music */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -249,6 +281,22 @@
 		364FDB9629712D49002E4FC2 /* Music */ = {
 			isa = PBXGroup;
 			children = (
+				9462577B2974319500578137 /* how.mp3 */,
+				946257702974319400578137 /* oh.mp3 */,
+				946257722974319400578137 /* airhorn.mp3 */,
+				946257782974319500578137 /* gminor.mp3 */,
+				9462577E2974319500578137 /* revCR.mp3 */,
+				9462577D2974319500578137 /* loops.mp3 */,
+				946257762974319500578137 /* fillin.mp3 */,
+				946257802974319500578137 /* tuneUp.mp3 */,
+				946257712974319400578137 /* acid.mp3 */,
+				946257792974319500578137 /* bass.mp3 */,
+				9462577F2974319500578137 /* crash.mp3 */,
+				946257772974319500578137 /* open.mp3 */,
+				946257752974319500578137 /* rootBPM.mp3 */,
+				9462577C2974319500578137 /* synths.mp3 */,
+				9462577A2974319500578137 /* kicks.mp3 */,
+				946257742974319400578137 /* snares.mp3 */,
 				364FDB8729712D37002E4FC2 /* board.mp3 */,
 				364FDB8929712D37002E4FC2 /* clock.mp3 */,
 				364FDB8C29712D37002E4FC2 /* dotRing.mp3 */,
@@ -366,19 +414,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				946257882974319500578137 /* open.mp3 in Resources */,
+				946257912974319500578137 /* tuneUp.mp3 in Resources */,
+				9462578E2974319500578137 /* loops.mp3 in Resources */,
 				364FDB362970F168002E4FC2 /* LaunchScreen.storyboard in Resources */,
+				946257822974319500578137 /* acid.mp3 in Resources */,
+				9462578F2974319500578137 /* revCR.mp3 in Resources */,
 				364FDB9529712D37002E4FC2 /* dotRing.mp3 in Resources */,
+				9462578C2974319500578137 /* how.mp3 in Resources */,
 				364FDB9229712D37002E4FC2 /* clock.mp3 in Resources */,
 				364FDB8D29712D37002E4FC2 /* drum.mp3 in Resources */,
+				946257872974319500578137 /* fillin.mp3 in Resources */,
 				364FDB8F29712D37002E4FC2 /* ring.mp3 in Resources */,
+				946257902974319500578137 /* crash.mp3 in Resources */,
 				364FDB9429712D37002E4FC2 /* traingle.mp3 in Resources */,
 				364FDB332970F168002E4FC2 /* Assets.xcassets in Resources */,
+				946257832974319500578137 /* airhorn.mp3 in Resources */,
 				364FDB8E29712D37002E4FC2 /* woodFish.mp3 in Resources */,
 				364FDB6F2970FBC6002E4FC2 /* SettingCell.xib in Resources */,
+				946257852974319500578137 /* snares.mp3 in Resources */,
 				364FDB9929713019002E4FC2 /* ImageCell.xib in Resources */,
+				9462578A2974319500578137 /* bass.mp3 in Resources */,
 				364FDB312970F166002E4FC2 /* Main.storyboard in Resources */,
+				946257892974319500578137 /* gminor.mp3 in Resources */,
+				9462578B2974319500578137 /* kicks.mp3 in Resources */,
+				9462578D2974319500578137 /* synths.mp3 in Resources */,
 				364FDB9029712D37002E4FC2 /* board.mp3 in Resources */,
+				946257862974319500578137 /* rootBPM.mp3 in Resources */,
 				364FDB9329712D37002E4FC2 /* gong.mp3 in Resources */,
+				946257812974319500578137 /* oh.mp3 in Resources */,
 				364FDB9129712D37002E4FC2 /* inSin.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
