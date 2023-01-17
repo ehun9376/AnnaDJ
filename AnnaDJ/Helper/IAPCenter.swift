@@ -72,19 +72,19 @@ enum ProductID {
     var id: String  {
         switch self {
             //木魚
-        case .woodFish: return  "a"
+        case .woodFish: return  "com.gtarcade.lod.gold9"
             
             //鼓
         case .drum: return "b"
             
             //金剛鈴
-        case .ring: return "c"
+        case .ring: return "com.proximabeta.tof.diamond6"
             
             //引馨
         case .inSin: return "d"
             
             //銅鑼
-        case .gong: return "e"
+        case .gong: return "com.proximabeta.tof.diamond5"
             
         case .board: return "f"
             
@@ -105,11 +105,11 @@ enum ProductID {
         case .revCR:
             return "n"
         case .loops:
-            return "n"
+            return "com.moonton.diamond_5000_new"
         case .fillin:
-            return "n"
+            return "com.ngame.allstar.eu.pay99.99"
         case .tuneUp:
-            return "n"
+            return "com.ngame.allstar.naa.pay99.99"
         case .acid:
             return "n"
         case .bass:
@@ -256,7 +256,23 @@ class IAPCenter: NSObject {
     
     let baseTypes: [ProductID] = [.how,.oh,.clock,.airhorn,.gminor,.revCR,.drum,.board,.dotRing,.traingle]
     
-    let buyTypes: [ProductID] = [.woodFish,.gong,.ring,.loops,.fillin,.tuneUp,.acid,.bass,.crash,.open,.rootBPM,.synths,.inSin,.kicks,.snares]
+    let buyTypes: [ProductID] = [
+        .woodFish,
+        .gong,
+        .ring,
+        .loops,
+        .fillin,
+        .tuneUp,
+//        .acid,
+//        .bass,
+//        .crash,
+//        .open,
+//        .rootBPM,
+//        .synths,
+//        .inSin,
+//        .kicks,
+//        .snares
+    ]
     
     
     //總共有多少購買項目

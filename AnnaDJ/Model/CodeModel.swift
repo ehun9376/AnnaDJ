@@ -59,23 +59,39 @@ class CodeModel: Equatable {
     
     static let snares: CodeModel = .init(text: ProductID.snares.text, number: 15, data: .snares)
     
+    static let woodFish: CodeModel = .init(text: ProductID.woodFish.text, number: 16, data: .woodFish)
+    
+    static let gong: CodeModel = .init(text: ProductID.gong.text, number: 17, data: .gong)
+    
+    static let ring: CodeModel = .init(text: ProductID.ring.text, number: 18, data: .ring)
+    
+ 
     static let items: [CodeModel] = [
-        .how,
-        .oh,
-        .airhorn,
-        .gminor,
-        .revCR,
+        .woodFish,
+        .gong,
+        .ring,
         .loops,
         .fillin,
         .tuneUp,
-        .acid,
-        .bass,
-        .crash,
-        .open,
-        .rootBPM,
-        .synths,
-        .kicks,
-        .snares,
     ]
+    
+//    static let items: [CodeModel] = [
+//        .how,
+//        .oh,
+//        .airhorn,
+//        .gminor,
+//        .revCR,
+//        .loops,
+//        .fillin,
+//        .tuneUp,
+//        .acid,
+//        .bass,
+//        .crash,
+//        .open,
+//        .rootBPM,
+//        .synths,
+//        .kicks,
+//        .snares,
+//    ]
     
 }

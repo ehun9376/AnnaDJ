@@ -22,8 +22,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Raf-Lf-OAW">
-                        <rect key="frame" x="308" y="38" width="150" height="34.333333333333343"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Raf-Lf-OAW">
+                        <rect key="frame" x="288" y="38" width="170" height="34.333333333333343"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcF-X7-765">
                                 <rect key="frame" x="0.0" y="0.0" width="75" height="34.333333333333336"/>
@@ -31,7 +31,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcg-zS-ZVM">
-                                <rect key="frame" x="75" y="0.0" width="75" height="34.333333333333336"/>
+                                <rect key="frame" x="95" y="0.0" width="75" height="34.333333333333336"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
