@@ -111,11 +111,11 @@ enum ProductID {
         case .tuneUp:
             return "com.ngame.allstar.naa.pay99.99"
         case .acid:
-            return "n"
+            return "10482"
         case .bass:
-            return "n"
+            return "10483"
         case .crash:
-            return "n"
+            return "60027"
         case .open:
             return "n"
         case .rootBPM:
@@ -263,9 +263,9 @@ class IAPCenter: NSObject {
         .loops,
         .fillin,
         .tuneUp,
-//        .acid,
-//        .bass,
-//        .crash,
+        .acid,
+        .bass,
+        .crash,
 //        .open,
 //        .rootBPM,
 //        .synths,

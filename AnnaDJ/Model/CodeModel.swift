@@ -73,6 +73,9 @@ class CodeModel: Equatable {
         .loops,
         .fillin,
         .tuneUp,
+        .acid,
+        .bass,
+        .crash
     ]
     
 //    static let items: [CodeModel] = [
