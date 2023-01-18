@@ -692,6 +692,7 @@
 				DEVELOPMENT_TEAM = R5C233MPJ3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnnaDJ/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = tinaDJ;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -724,6 +725,7 @@
 				DEVELOPMENT_TEAM = R5C233MPJ3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnnaDJ/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = tinaDJ;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
