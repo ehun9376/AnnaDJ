@@ -55,7 +55,7 @@ class GridViewController: BaseCollectionViewController {
         
         let iaped = UserInfoCenter.shared.loadValue(.iaped) as? [String] ?? []
                         
-        let buyedTypes = IAPCenter.shared.buyTypes.filter({ return !iaped.contains($0.id) })
+        let buyedTypes = IAPCenter.shared.buyTypes//.filter({ return !iaped.contains($0.id) })
         
         for (index,type) in buyedTypes.enumerated() {
             codeDataSource.append(CodeModel(text: type.soundName, number: index, data: type))
