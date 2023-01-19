@@ -124,6 +124,11 @@ class GridViewController: BaseCollectionViewController {
                 guard let itemModel = itemModel as? ImageCellItemModel else { return }
                 
                 self?.pleyers?.play(index: itemModel.index ?? 0)
+                
+                var iaped = UserInfoCenter.shared.loadValue(.iaped) as? [String] ?? []
+                iaped = iaped.filter({$0 != type.id})
+                UserInfoCenter.shared.storeValue(.iaped, data: iaped)
+                self?.setupItemModel()
             }))
         }
 
