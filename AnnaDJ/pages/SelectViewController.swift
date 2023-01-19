@@ -71,7 +71,7 @@ class SelectViewController: BaseTableViewController {
             
         })
         
-        rowModels.append(reStoreRowModel)
+//        rowModels.append(reStoreRowModel)
         
         self.adapter?.updateTableViewData(rowModels: rowModels)
     }
