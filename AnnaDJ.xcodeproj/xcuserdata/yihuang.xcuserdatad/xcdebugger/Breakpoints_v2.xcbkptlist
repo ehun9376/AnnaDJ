@@ -52,53 +52,5 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "881F4206-A3D3-47BA-A0EB-935AA3E77E89"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AnnaDJ/pages/GridViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "setupItemModel()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "881F4206-A3D3-47BA-A0EB-935AA3E77E89 - 7c2031e603eaa4b4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AnnaDJ.GridViewController.setupItemModel() -&gt; ()"
-                  moduleName = "AnnaDJ"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yihuang/Desktop/AnnaDJ/AnnaDJ/pages/GridViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "896">
-               </Location>
-               <Location
-                  uuid = "881F4206-A3D3-47BA-A0EB-935AA3E77E89 - dbab857bc2ff2772"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (AnnaDJ.ProductID) -&gt; Swift.Bool in AnnaDJ.GridViewController.setupItemModel() -&gt; ()"
-                  moduleName = "AnnaDJ"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yihuang/Desktop/AnnaDJ/AnnaDJ/pages/GridViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "40">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

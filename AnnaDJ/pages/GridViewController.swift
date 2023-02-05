@@ -136,6 +136,9 @@ class GridViewController: BaseCollectionViewController {
                 
                 if var count = iaped[type.id] {
                     count -= 1
+                    if count <= 0 {
+                        count = 0
+                    }
                     iaped[type.id] = count
                 }
                 UserInfoCenter.shared.storeValue(.iaped, data: iaped)
