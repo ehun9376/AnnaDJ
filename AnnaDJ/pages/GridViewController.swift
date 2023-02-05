@@ -98,19 +98,27 @@ class GridViewController: BaseCollectionViewController {
         let width = self.view.frame.width / 4
         
         
-        let iaped = UserInfoCenter.shared.loadValue(.iaped) as? [String] ?? []
+        let iaped = UserInfoCenter.shared.loadValue(.iaped) as? [String:Int] ?? [:]
         
         var alltype = IAPCenter.shared.baseTypes
                 
-        let buyedTypes = IAPCenter.shared.buyTypes.filter({ return iaped.contains($0.id) })
+        let buyedTypes = IAPCenter.shared.buyTypes.filter({ return iaped[$0.id] ?? 0 >= 1 })
         
         //購買過的
         alltype.append(contentsOf: buyedTypes)
         
+        
         //測試用全部
 //        alltype.append(contentsOf: IAPCenter.shared.buyTypes)
         
-        self.pleyers = try? .init(filenames: alltype.map({$0.soundName}))
+        var dict: [String: String] = [:]
+        
+        for type in alltype {
+            dict[type.id] = type.soundName
+        }
+
+        
+        self.pleyers = try? .init(keyFilenames: dict)
         
         for (index,type) in alltype.enumerated() {
             itemModels?.append(ImageCellItemModel(title: type.soundName,
@@ -121,17 +129,17 @@ class GridViewController: BaseCollectionViewController {
                                                   index: index,
                                                   itemSize: .init(width: width, height: width),
                                                   cellDidPressed: { [weak self] itemModel in
-                guard let itemModel = itemModel as? ImageCellItemModel else { return }
                 
-                self?.pleyers?.play(index: itemModel.index ?? 0)
+                self?.pleyers?.play(id: type.id)
                 
-                var iaped = UserInfoCenter.shared.loadValue(.iaped) as? [String] ?? []
-                var filterIaped = iaped.filter({$0 != type.id})
-                if iaped != filterIaped {
-                    self?.setupItemModel()
+                var iaped = UserInfoCenter.shared.loadValue(.iaped) as? [String: Int] ?? [:]
+                
+                if var count = iaped[type.id] {
+                    count -= 1
+                    iaped[type.id] = count
                 }
-                UserInfoCenter.shared.storeValue(.iaped, data: filterIaped)
-                
+                UserInfoCenter.shared.storeValue(.iaped, data: iaped)
+                self?.setupItemModel()
             }))
         }
 

@@ -10,63 +10,63 @@ import AVFoundation
 
 public class MultipleAudioPlayer {
         
-    private var audioPlayers: [AVAudioPlayer] = []
+    private var audioPlayers: [String:AVAudioPlayer] = [:]
     private var currentPlayer = 0
     private let playerDelegate = MultipleAudioPlayerObjCShim()
     
-    public convenience init(filenames: [String]) throws {
-        let fileURLs: [URL] = filenames.map { filename in
-            let nsFilename = filename as NSString
-            let filePrefix = nsFilename.deletingPathExtension
-            guard let fileURL = Bundle.main.url(forResource: filePrefix, withExtension: "mp3") else {
-               print("Main bundle does not contain file")
-                return URL(string: "")!
+    public convenience init(keyFilenames: [String: String]) throws {
+        
+        var dict: [String: URL] = [:]
+        
+        for key in keyFilenames.keys {
+            let fileName = keyFilenames[key]
+            if let fileURL = Bundle.main.url(forResource: fileName, withExtension: "mp3") {
+                dict[key] = fileURL
             }
-            return fileURL
         }
-        try self.init(fileURLs: fileURLs)
+
+        
+        try self.init(dict: dict)
     }
     
-    public init(fileURLs: [URL]) throws {
-        var players: [AVAudioPlayer] = []
+    public init(dict: [String: URL]) throws {
         #if os(iOS) || targetEnvironment(macCatalyst) || os(tvOS) || os(watchOS)
         if #available(iOS 3.0, macCatalyst 13.0, tvOS 10.0, watchOS 3.0, *) {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
         }
         #endif
-        for url in fileURLs {
-            let player = try AVAudioPlayer(contentsOf: url)
-            player.delegate = self.playerDelegate
-            players.append(player)
+        for key in dict.keys {
+            if let url = dict[key] {
+                let player = try AVAudioPlayer(contentsOf: url)
+                player.delegate = self.playerDelegate
+                self.audioPlayers[key] = player
+            }
         }
+
         
-        self.audioPlayers = players
     }
     
     // MARK: Public functions
     
-    public func playRandom() {
-        play(index: Int.random(in: 0..<audioPlayers.count))
-    }
     
-    public func play(index: Int = 0) {
-        guard index < audioPlayers.count else {
-            fatalError("index of audio file outside range of files")
-        }
-        
-        if audioPlayers[index].isPlaying {
-            audioPlayers[index].currentTime = 0
-            audioPlayers[index].play()
-        } else {
-            audioPlayers[index].play()
+    public func play(id: String) {
 
+        if let player = audioPlayers[id] {
+            if player.isPlaying {
+                player.currentTime = 0
+                player.play()
+            } else {
+                player.play()
+            }
         }
     }
     
     public func stop() {
-        for player in audioPlayers {
-            player.stop()
+        for key in self.audioPlayers.keys {
+            if let player = self.audioPlayers[key] {
+                player.stop()
+            }
         }
     }
 }

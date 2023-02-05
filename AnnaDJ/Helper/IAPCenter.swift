@@ -354,7 +354,7 @@ extension IAPCenter: SKPaymentTransactionObserver {
     
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         
-        var iapedIDs = UserInfoCenter.shared.loadValue(.iaped) as? [String] ?? []
+        var iapedIDs = UserInfoCenter.shared.loadValue(.iaped) as? [String: Int] ?? [:]
         
         transactions.forEach {
             
@@ -378,8 +378,13 @@ extension IAPCenter: SKPaymentTransactionObserver {
             
             if $0.transactionState == .purchased ||  $0.transactionState == .restored {
                 
-                if !iapedIDs.contains($0.payment.productIdentifier) {
-                    iapedIDs.append($0.payment.productIdentifier)
+                if !iapedIDs.keys.contains($0.payment.productIdentifier) {
+                    if var count = iapedIDs[$0.payment.productIdentifier] {
+                        count += 1
+                        iapedIDs[$0.payment.productIdentifier] = count
+                    } else {
+                        iapedIDs[$0.payment.productIdentifier] = 1
+                    }
                 }
                 
             }
