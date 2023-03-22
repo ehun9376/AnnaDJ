@@ -109,15 +109,9 @@ class GridViewController: BaseCollectionViewController {
         
         //測試用全部
 //        alltype.append(contentsOf: IAPCenter.shared.buyTypes)
-        
-        var dict: [String: String] = [:]
-        
-        for type in alltype {
-            dict[type.id] = type.title
-        }
 
         
-        self.pleyers = try? .init(keyFilenames: dict)
+        self.pleyers = try? .init(keyFilenames: alltype.map({$0.title}))
         
         for (index,type) in alltype.enumerated() {
             itemModels?.append(ImageCellItemModel(title: type.title,
@@ -129,7 +123,7 @@ class GridViewController: BaseCollectionViewController {
                                                   itemSize: .init(width: width, height: width),
                                                   cellDidPressed: { [weak self] itemModel in
                 
-                self?.pleyers?.play(id: type.id)
+                self?.pleyers?.play(id: type.title)
                 
                 var iaped = UserInfoCenter.shared.loadValue(.iaped) as? [String: Int] ?? [:]
                 

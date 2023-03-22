@@ -14,14 +14,13 @@ public class MultipleAudioPlayer {
     private var currentPlayer = 0
     private let playerDelegate = MultipleAudioPlayerObjCShim()
     
-    public convenience init(keyFilenames: [String: String]) throws {
+    public convenience init(keyFilenames: [String]) throws {
         
         var dict: [String: URL] = [:]
         
-        for key in keyFilenames.keys {
-            let fileName = keyFilenames[key]
-            if let fileURL = Bundle.main.url(forResource: fileName, withExtension: "mp3") {
-                dict[key] = fileURL
+        for name in keyFilenames {
+            if let fileURL = Bundle.main.url(forResource: name, withExtension: "mp3") {
+                dict[name] = fileURL
             }
         }
 
