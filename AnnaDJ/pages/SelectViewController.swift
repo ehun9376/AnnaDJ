@@ -47,12 +47,14 @@ class SelectViewController: BaseTableViewController {
         
         for model in self.dataSourceModels {
             
-            let buyRowModel = BuyCellRowModel(title: model.data.soundName,
+            let buyRowModel = BuyCellRowModel(title: model.text ?? "",
                                               tryButtonAction: {  [weak self] in
-                self?.tryListen(soundName: model.data.soundName)
+                self?.tryListen(soundName: model.text ?? "")
             },
                                               buyButtonAction: {  [weak self] in
-                self?.buy(id: model.data.id)
+                if let id = model.data?.id {
+                    self?.buy(id: id)
+                }
             })
             
             rowModels.append(buyRowModel)
@@ -60,16 +62,16 @@ class SelectViewController: BaseTableViewController {
         }
         
         //恢復購買紀錄
-        let reStoreRowModel = SettingCellRowModel(title: "恢復購買紀錄",
-                                                imageName: "briefcase",
-                                                showSwitch: false,
-                                                cellDidSelect: { [weak self] _ in
-            IAPCenter.shared.storeComplete = {
-                self?.showToast(message: "購買紀錄已恢復")
-            }
-            IAPCenter.shared.restore()
-            
-        })
+//        let reStoreRowModel = SettingCellRowModel(title: "恢復購買紀錄",
+//                                                imageName: "briefcase",
+//                                                showSwitch: false,
+//                                                cellDidSelect: { [weak self] _ in
+//            IAPCenter.shared.storeComplete = {
+//                self?.showToast(message: "購買紀錄已恢復")
+//            }
+//            IAPCenter.shared.restore()
+//            
+//        })
         
 //        rowModels.append(reStoreRowModel)
         
@@ -96,12 +98,10 @@ class SelectViewController: BaseTableViewController {
     
     func buy(id: String) {
         
-        IAPCenter.shared.storeComplete = {
-            self.setupRow()
-        }
-        
         if let product = IAPCenter.shared.products.first(where: {$0.productIdentifier == id}) {
-            IAPCenter.shared.buy(product: product)
+            IAPCenter.shared.buy(product: product, compelete: { [weak self] in
+                self?.setupRow()
+            })
         }
        
     }

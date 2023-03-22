@@ -63,6 +63,9 @@
 		9462579A297438E000578137 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94625799297438E000578137 /* StoreKit.framework */; };
 		9462579D29743D3600578137 /* BuyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9462579C29743D3600578137 /* BuyCell.swift */; };
 		9462579F29743DD900578137 /* BuyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9462579E29743DD900578137 /* BuyCell.xib */; };
+		94FC0A3B29CAC68900D2E9F3 /* JBJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FC0A3A29CAC68900D2E9F3 /* JBJson.swift */; };
+		94FC0A3D29CAC75500D2E9F3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FC0A3C29CAC75500D2E9F3 /* APIService.swift */; };
+		94FC0A3F29CB3CB600D2E9F3 /* IAPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FC0A3E29CB3CB600D2E9F3 /* IAPModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +146,9 @@
 		94625799297438E000578137 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9462579C29743D3600578137 /* BuyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCell.swift; sourceTree = "<group>"; };
 		9462579E29743DD900578137 /* BuyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyCell.xib; sourceTree = "<group>"; };
+		94FC0A3A29CAC68900D2E9F3 /* JBJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JBJson.swift; sourceTree = "<group>"; };
+		94FC0A3C29CAC75500D2E9F3 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		94FC0A3E29CB3CB600D2E9F3 /* IAPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +203,7 @@
 			children = (
 				364FDB292970F166002E4FC2 /* AppDelegate.swift */,
 				364FDB5D2970FBAB002E4FC2 /* LaunchviewController.swift */,
+				94FC0A3C29CAC75500D2E9F3 /* APIService.swift */,
 				9462579B2974391B00578137 /* pages */,
 				364FDB8329712A83002E4FC2 /* CustomView */,
 				364FDB8229712A6D002E4FC2 /* Helper */,
@@ -254,6 +261,7 @@
 		364FDB8129712A55002E4FC2 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				94FC0A3A29CAC68900D2E9F3 /* JBJson.swift */,
 				364FDB712970FBCB002E4FC2 /* TableViewAdapter.swift */,
 				364FDB742970FBCC002E4FC2 /* BaseCollectionViewController.swift */,
 				364FDB752970FBCC002E4FC2 /* BaseTableViewController.swift */,
@@ -268,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				364FDB642970FBB8002E4FC2 /* IAPCenter.swift */,
+				94FC0A3E29CB3CB600D2E9F3 /* IAPModel.swift */,
 				364FDB592970F179002E4FC2 /* MusicPlayerCenter.swift */,
 				364FDB652970FBB8002E4FC2 /* KeyboardHelper.swift */,
 				364FDB632970FBB8002E4FC2 /* UserInfoCenter.swift */,
@@ -499,16 +508,19 @@
 				364FDB702970FBC6002E4FC2 /* SettingCell.swift in Sources */,
 				364FDB9A29713019002E4FC2 /* ImageCell.swift in Sources */,
 				364FDB5A2970F179002E4FC2 /* MusicPlayerCenter.swift in Sources */,
+				94FC0A3B29CAC68900D2E9F3 /* JBJson.swift in Sources */,
 				364FDB6B2970FBBF002E4FC2 /* SwiftButton.swift in Sources */,
 				364FDB7E29712A3A002E4FC2 /* AppImageModel.swift in Sources */,
 				364FDB7B2970FBCC002E4FC2 /* BaseTableViewController.swift in Sources */,
 				364FDB6C2970FBBF002E4FC2 /* StackBottomBarView.swift in Sources */,
+				94FC0A3F29CB3CB600D2E9F3 /* IAPModel.swift in Sources */,
 				364FDB7A2970FBCC002E4FC2 /* BaseCollectionViewController.swift in Sources */,
 				364FDB772970FBCC002E4FC2 /* TableViewAdapter.swift in Sources */,
 				364FDB682970FBB8002E4FC2 /* KeyboardHelper.swift in Sources */,
 				364FDB2A2970F166002E4FC2 /* AppDelegate.swift in Sources */,
 				364FDB5F2970FBAB002E4FC2 /* SelectViewController.swift in Sources */,
 				364FDB672970FBB8002E4FC2 /* IAPCenter.swift in Sources */,
+				94FC0A3D29CAC75500D2E9F3 /* APIService.swift in Sources */,
 				364FDB782970FBCC002E4FC2 /* BaseViewController.swift in Sources */,
 				364FDB622970FBB2002E4FC2 /* CodeModel.swift in Sources */,
 				364FDB7C2970FBCC002E4FC2 /* CellProtocol.swift in Sources */,

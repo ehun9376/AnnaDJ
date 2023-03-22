@@ -53,12 +53,11 @@ class GridViewController: BaseCollectionViewController {
         
         var codeDataSource: [CodeModel] = []
         
-        let iaped = UserInfoCenter.shared.loadValue(.iaped) as? [String] ?? []
                         
-        let buyedTypes = IAPCenter.shared.buyTypes//.filter({ return !iaped.contains($0.id) })
+        let buyedTypes = IAPCenter.shared.buyTypes
         
         for (index,type) in buyedTypes.enumerated() {
-            codeDataSource.append(CodeModel(text: type.soundName, number: index, data: type))
+            codeDataSource.append(CodeModel(text: type.title, number: index, data: type))
         }
         
         vc.dataSourceModels = codeDataSource
@@ -114,14 +113,14 @@ class GridViewController: BaseCollectionViewController {
         var dict: [String: String] = [:]
         
         for type in alltype {
-            dict[type.id] = type.soundName
+            dict[type.id] = type.title
         }
 
         
         self.pleyers = try? .init(keyFilenames: dict)
         
         for (index,type) in alltype.enumerated() {
-            itemModels?.append(ImageCellItemModel(title: type.soundName,
+            itemModels?.append(ImageCellItemModel(title: type.title,
                                                   color: UIColor(red: CGFloat(Float.random(in: 0...1)),
                                                                  green: CGFloat(Float.random(in: 0...1)),
                                                                  blue: CGFloat(Float.random(in: 0...1)),

@@ -16,28 +16,9 @@ class LaunchViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.pushToTabbarController()
-    }
-    
-
-    
-    func pushToTabbarController() {
-        
-        IAPCenter.shared.requestComplete = { [weak self] debug in
-            if debug.count != 0{
-                self?.showSingleAlert(title: "取得產品資料錯誤", message: debug.joined(separator: "\n"), confirmTitle: "OK", confirmAction: {
-                    self?.toVC()
-                })
-            } else {
-                self?.toVC()
-            }
-
+        IAPCenter.shared.getProducts { [weak self] in
+            self?.toVC()
         }
-
-        IAPCenter.shared.getProducts()
-
-
-        
     }
     
     func toVC() {

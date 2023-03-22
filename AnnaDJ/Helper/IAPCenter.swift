@@ -7,7 +7,8 @@
 
 import Foundation
 import StoreKit
-enum ProductID {
+
+enum ProductID: CaseIterable {
     
     
     ///木魚
@@ -72,60 +73,60 @@ enum ProductID {
     var id: String  {
         switch self {
             //木魚
-        case .woodFish: return  "com.gtarcade.lod.gold9"
+        case .woodFish: return  ""
             
             //鼓
-        case .drum: return "b"
+        case .drum: return ""
             
             //金剛鈴
-        case .ring: return "com.proximabeta.tof.diamond6"
+        case .ring: return ""
             
             //引馨
-        case .inSin: return "d"
+        case .inSin: return ""
             
             //銅鑼
-        case .gong: return "com.proximabeta.tof.diamond5"
+        case .gong: return ""
             
-        case .board: return "f"
+        case .board: return ""
             
-        case .clock: return "g"
+        case .clock: return ""
             
-        case .dotRing: return "h"
+        case .dotRing: return ""
             
-        case .traingle: return "i"
+        case .traingle: return ""
 
         case .how:
-            return "j"
+            return ""
         case .oh:
-            return "n"
+            return ""
         case .airhorn:
-            return "n"
+            return ""
         case .gminor:
-            return "n"
+            return ""
         case .revCR:
-            return "n"
+            return ""
         case .loops:
-            return "com.moonton.diamond_5000_new"
+            return ""
         case .fillin:
-            return "com.ngame.allstar.eu.pay99.99"
+            return ""
         case .tuneUp:
-            return "com.ngame.allstar.naa.pay99.99"
+            return ""
         case .acid:
-            return "10482"
+            return ""
         case .bass:
-            return "10483"
+            return ""
         case .crash:
-            return "60027"
+            return ""
         case .open:
-            return "n"
+            return ""
         case .rootBPM:
-            return "n"
+            return ""
         case .synths:
-            return "n"
+            return ""
         case .kicks:
-            return "n"
+            return ""
         case .snares:
-            return "n"
+            return ""
         }
     }
     
@@ -250,46 +251,44 @@ class IAPCenter: NSObject {
     
     var productRequest: SKProductsRequest?
     
-    var requestComplete: (([String])->())?
+    var compelete: (()->())?
+            
+    var baseTypes: [SoundModel] = []
     
-    var storeComplete: (()->())?
-    
-    let baseTypes: [ProductID] = [.how,.oh,.clock,.airhorn,.gminor,.revCR,.drum,.board,.dotRing,.traingle]
-    
-    let buyTypes: [ProductID] = [
-        .woodFish,
-        .gong,
-        .ring,
-        .loops,
-        .fillin,
-        .tuneUp,
-        .acid,
-        .bass,
-        .crash,
-//        .open,
-//        .rootBPM,
-//        .synths,
-//        .inSin,
-//        .kicks,
-//        .snares
-    ]
+    var buyTypes: [SoundModel] = []
     
     
-    //總共有多少購買項目
-    func getProductIDs() -> [String] {
-        return buyTypes.map { $0.id }
-    }
     
-    func getProducts() {
+    func getProducts(compelete: (()->())?) {
+        self.compelete = compelete
+
+        
+
         SKPaymentQueue.default().restoreCompletedTransactions()
-        let productIds = getProductIDs()
-        let productIdsSet = Set(productIds)
-        productRequest = SKProductsRequest(productIdentifiers: productIdsSet)
-        productRequest?.delegate = self
-        productRequest?.start()
+        
+
+
+        //TODO: 透過後台把type變成活動的
+        APIService.shared.requestWithParam(urlText: .TinaDJTypeURL,
+                                           param: [:],
+                                           modelType: IAPModel.self) { jsonModel, error in
+
+            self.baseTypes = jsonModel?.defaultType ?? []
+            
+            self.buyTypes = jsonModel?.canBuyType ?? []
+             
+            let productIds = self.buyTypes.map { $0.id }
+            
+            let productIdsSet = Set(productIds)
+            self.productRequest = SKProductsRequest(productIdentifiers: productIdsSet)
+            self.productRequest?.delegate = self
+            self.productRequest?.start()
+        }
+  
     }
     
-    func buy(product: SKProduct) {
+    func buy(product: SKProduct, compelete: (()->())?) {
+        self.compelete = compelete
         if SKPaymentQueue.canMakePayments() {
             let payment = SKPayment(product: product)
             SKPaymentQueue.default().add(payment)
@@ -301,7 +300,9 @@ class IAPCenter: NSObject {
                 controller.showSingleAlert(title: "提示",
                                            message: "你的帳號無法購買",
                                            confirmTitle: "OK",
-                                           confirmAction: nil)
+                                           confirmAction: { [weak self] in
+                    self?.compelete?()
+                })
             }
         }
     }
@@ -314,16 +315,26 @@ class IAPCenter: NSObject {
 }
 extension IAPCenter: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        self.compelete?()
+
         print("產品列表")
         if response.products.count != 0 {
             response.products.forEach {
                 print($0.localizedTitle, $0.price, $0.localizedDescription)
             }
             self.products = response.products
-            requestComplete?([])
         } else {
-            self.products = response.products
-            requestComplete?(response.invalidProductIdentifiers)
+            let scenes = UIApplication.shared.connectedScenes
+            let windowScene = scenes.first as? UIWindowScene
+            let window = windowScene?.windows.first
+            if let controller = window?.rootViewController as? BaseViewController {
+                controller.showSingleAlert(title: "取得產品資料錯誤",
+                                           message: response.invalidProductIdentifiers.joined(separator: ","),
+                                           confirmTitle: "OK",
+                                           confirmAction: { [weak self] in
+                    
+                })
+            }
             print(response.invalidProductIdentifiers)
             print(response.description)
             print(response.debugDescription)
@@ -377,21 +388,17 @@ extension IAPCenter: SKPaymentTransactionObserver {
             }
             
             if $0.transactionState == .purchased ||  $0.transactionState == .restored {
-                
-                if !iapedIDs.keys.contains($0.payment.productIdentifier) {
-                    if var count = iapedIDs[$0.payment.productIdentifier] {
-                        count += 1
-                        iapedIDs[$0.payment.productIdentifier] = count
-                    } else {
-                        iapedIDs[$0.payment.productIdentifier] = 1
-                    }
+                if var count = iapedIDs[$0.payment.productIdentifier] {
+                    count += 1
+                    iapedIDs[$0.payment.productIdentifier] = count
+                } else {
+                    iapedIDs[$0.payment.productIdentifier] = 1
                 }
                 
             }
             
         }
         UserInfoCenter.shared.storeValue(.iaped, data: iapedIDs)
-        self.storeComplete?()
     }
     
 }
