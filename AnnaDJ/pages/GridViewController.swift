@@ -26,6 +26,23 @@ class GridViewController: BaseCollectionViewController {
         self.setupItemModel()
         self.setupRightButton()
         self.setupLeftButton()
+        
+        let iaped = UserInfoCenter.shared.loadValue(.iaped) as? [String:Int] ?? [:]
+        
+        var alltype = IAPCenter.shared.baseTypes
+                
+        let buyedTypes = IAPCenter.shared.buyTypes.filter({ return iaped[$0.id] ?? 0 >= 1 })
+        
+        //購買過的
+        alltype.append(contentsOf: buyedTypes)
+        
+        
+        //測試用全部
+//        alltype.append(contentsOf: IAPCenter.shared.buyTypes)
+
+        
+        self.pleyers = try? .init(keyFilenames: alltype.map({$0.title}))
+        
     }
     
     func setupRightButton() {
@@ -110,9 +127,7 @@ class GridViewController: BaseCollectionViewController {
         //測試用全部
 //        alltype.append(contentsOf: IAPCenter.shared.buyTypes)
 
-        
-        self.pleyers = try? .init(keyFilenames: alltype.map({$0.title}))
-        
+            
         for (index,type) in alltype.enumerated() {
             itemModels?.append(ImageCellItemModel(title: type.title,
                                                   color: UIColor(red: CGFloat(Float.random(in: 0...1)),
@@ -130,9 +145,8 @@ class GridViewController: BaseCollectionViewController {
                 if var count = iaped[type.id] {
                     count -= 1
                     if count <= 0 {
-                        count = 0
+                        iaped.removeValue(forKey: type.id)
                     }
-                    iaped[type.id] = count
                 }
                 UserInfoCenter.shared.storeValue(.iaped, data: iaped)
                 self?.setupItemModel()
