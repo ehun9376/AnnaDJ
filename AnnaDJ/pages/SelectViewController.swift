@@ -102,6 +102,8 @@ class SelectViewController: BaseTableViewController {
             IAPCenter.shared.buy(product: product, compelete: { [weak self] in
                 self?.setupRow()
             })
+        } else {
+            self.showToast(message: "取得產品資料錯誤")
         }
        
     }

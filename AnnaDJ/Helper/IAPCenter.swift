@@ -269,7 +269,8 @@ class IAPCenter: NSObject {
 
 
         //TODO: 透過後台把type變成活動的
-        APIService.shared.requestWithParam(urlText: .TinaDJTypeURL,
+        APIService.shared.requestWithParam(httpMethod: .post,
+                                           urlText: .TinaDJTypeURL,
                                            param: [:],
                                            modelType: IAPModel.self) { jsonModel, error in
 
@@ -292,18 +293,6 @@ class IAPCenter: NSObject {
         if SKPaymentQueue.canMakePayments() {
             let payment = SKPayment(product: product)
             SKPaymentQueue.default().add(payment)
-        } else {
-            let scenes = UIApplication.shared.connectedScenes
-            let windowScene = scenes.first as? UIWindowScene
-            let window = windowScene?.windows.first
-            if let controller = window?.rootViewController as? BaseViewController {
-                controller.showSingleAlert(title: "提示",
-                                           message: "你的帳號無法購買",
-                                           confirmTitle: "OK",
-                                           confirmAction: { [weak self] in
-                    self?.compelete?()
-                })
-            }
         }
     }
     
@@ -323,21 +312,6 @@ extension IAPCenter: SKProductsRequestDelegate {
                 print($0.localizedTitle, $0.price, $0.localizedDescription)
             }
             self.products = response.products
-        } else {
-            let scenes = UIApplication.shared.connectedScenes
-            let windowScene = scenes.first as? UIWindowScene
-            let window = windowScene?.windows.first
-            if let controller = window?.rootViewController as? BaseViewController {
-                controller.showSingleAlert(title: "取得產品資料錯誤",
-                                           message: response.invalidProductIdentifiers.joined(separator: ","),
-                                           confirmTitle: "OK",
-                                           confirmAction: { [weak self] in
-                    
-                })
-            }
-            print(response.invalidProductIdentifiers)
-            print(response.description)
-            print(response.debugDescription)
         }
         
         
@@ -350,17 +324,6 @@ extension IAPCenter: SKPaymentTransactionObserver {
     
     func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
         print(error.localizedDescription)
-        
-        let scenes = UIApplication.shared.connectedScenes
-        let windowScene = scenes.first as? UIWindowScene
-        let window = windowScene?.windows.first
-        
-        if let controller = window?.rootViewController as? BaseViewController {
-            controller.showSingleAlert(title: "錯誤",
-                                       message: error.localizedDescription,
-                                       confirmTitle: "OK",
-                                       confirmAction: nil)
-        }
     }
     
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {

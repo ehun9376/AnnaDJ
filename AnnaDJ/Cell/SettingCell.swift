@@ -114,10 +114,18 @@ extension SettingCell: BaseCellView {
         self.functionSwitch.isOn = rowModel.switchON
         
         if let imageName = rowModel.imageName {
-            self.iconImageView.image = UIImage(named: imageName)?.withRenderingMode(.alwaysTemplate).resizeImage(targetSize: .init(width: 30, height: 30)).withTintColor(.systemRed)
+            if #available(iOS 13.0, *) {
+                self.iconImageView.image = UIImage(named: imageName)?.withRenderingMode(.alwaysTemplate).resizeImage(targetSize: .init(width: 30, height: 30)).withTintColor(.systemRed)
+            } else {
+                // Fallback on earlier versions
+            }
         } else {
             if let systemImageName = rowModel.systemImageName {
-                self.iconImageView.image = UIImage(systemName: systemImageName)?.withRenderingMode(.alwaysTemplate).resizeImage(targetSize: .init(width: 30, height: 30)).withTintColor(.systemRed)
+                if #available(iOS 13.0, *) {
+                    self.iconImageView.image = UIImage(systemName:  systemImageName)?.withRenderingMode(.alwaysTemplate).resizeImage(targetSize: .init(width: 30, height: 30)).withTintColor(.systemRed)
+                } else {
+                    // Fallback on earlier versions
+                }
             }
         }
         

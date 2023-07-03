@@ -40,7 +40,7 @@ class APIService: NSObject {
     private let apiQueue = DispatchQueue(label: "api_queue", qos: .utility)
 
     enum URLText: String {
-        case TinaDJTypeURL = "http://www.yihuang.online/yihuang.online/ehun9376/Type.json"
+        case TinaDJTypeURL = "http://www.yihuang.online/yihuang.online/ehun9376/AnnaDJ.json"
     }
         
     func requestWithParam<T: JsonModel>(httpMethod: HttpMethod = .post, headerField: HTTPHeaderField? = [:] , urlText: URLText, param: parameter, modelType: T.Type ,  completeAction: @escaping CompleteAction<T>) {
