@@ -62,18 +62,18 @@ class SelectViewController: BaseTableViewController {
         }
         
         //恢復購買紀錄
-//        let reStoreRowModel = SettingCellRowModel(title: "恢復購買紀錄",
-//                                                imageName: "briefcase",
-//                                                showSwitch: false,
-//                                                cellDidSelect: { [weak self] _ in
-//            IAPCenter.shared.storeComplete = {
-//                self?.showToast(message: "購買紀錄已恢復")
-//            }
-//            IAPCenter.shared.restore()
-//            
-//        })
+        let reStoreRowModel = SettingCellRowModel(title: "恢復購買紀錄",
+                                                imageName: "briefcase",
+                                                showSwitch: false,
+                                                cellDidSelect: { [weak self] _ in
+            IAPCenter.shared.compelete = {
+                self?.showToast(message: "購買紀錄已恢復")
+            }
+            IAPCenter.shared.restore()
+            
+        })
         
-//        rowModels.append(reStoreRowModel)
+        rowModels.append(reStoreRowModel)
         
         self.adapter?.updateTableViewData(rowModels: rowModels)
     }
